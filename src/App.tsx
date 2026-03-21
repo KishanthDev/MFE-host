@@ -1,18 +1,27 @@
 import React, { Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
 
 const Dashboard = React.lazy(() => import("dashboard/Dashboard"));
 
 function App() {
-  console.log("App rendered");
-
   return (
-    <div>
-      <h1>HOST APP</h1>
-
-      <Suspense fallback={<div>Loading remote...</div>}>
-        <Dashboard />
-      </Suspense>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<div>Loading remote...</div>}>
+                <Dashboard />
+              </Suspense>
+            }
+          />
+          <Route path="/profile" element={<h1>Profile Page</h1>} />
+          <Route path="/settings" element={<h1>Settings Page</h1>} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
