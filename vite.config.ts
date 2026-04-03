@@ -1,11 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
-import path from "path"; // 🔥 Add this import
+import path from "path";
+import tailwindcss from '@tailwindcss/vite'
+
 
 export default defineConfig({
   plugins: [
     react(),
+    tailwindcss(),
     federation({
       name: "host",
       remotes: {
@@ -18,7 +21,6 @@ export default defineConfig({
     target: "esnext",
     modulePreload: false,
   },
-  // 🔥 Add this resolve block
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

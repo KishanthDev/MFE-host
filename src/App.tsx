@@ -17,7 +17,6 @@ function App() {
               </Suspense>
             }
           />
-          <Route path="/profile" element={<h1>Profile Page</h1>} />
           <Route path="/settings" element={<h1>Settings Page</h1>} />
         </Routes>
       </Layout>
