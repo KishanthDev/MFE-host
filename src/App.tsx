@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import { MfeLoader } from "./lib/mfe-loader";
 
@@ -8,7 +8,7 @@ const Profile = React.lazy(() => import("profile/Profile"));
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Layout>
         <Routes>
           <Route path="/" element={<MfeLoader component={Dashboard} />} />
@@ -18,7 +18,7 @@ function App() {
           <Route path="/settings" element={<h1>Settings Page</h1>} />
         </Routes>
       </Layout>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
