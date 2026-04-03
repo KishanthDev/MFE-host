@@ -39,6 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           >
             <Menu className="h-6 w-6" />
           </button>
+          <span className="md:hidden ml-4 text-lg font-semibold tracking-tight text-gray-900">My App</span>
           
         </header>
 
