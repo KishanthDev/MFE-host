@@ -13,6 +13,7 @@ export default defineConfig({
       name: "host",
       remotes: {
         dashboard: "https://mfe-dashboard-jet.vercel.app/assets/remoteEntry.js",
+        profile: "https://mfe-profile.vercel.app/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom"],
     }),

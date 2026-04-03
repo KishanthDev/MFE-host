@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 
 const Dashboard = React.lazy(() => import("dashboard/Dashboard"));
+const Profile = React.lazy(() => import("profile/Profile"));
 
 function App() {
   return (
@@ -14,6 +15,14 @@ function App() {
             element={
               <Suspense fallback={<div>Loading remote...</div>}>
                 <Dashboard />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Suspense fallback={<div>Loading remote...</div>}>
+                <Profile />
               </Suspense>
             }
           />
